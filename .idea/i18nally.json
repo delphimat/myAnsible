@@ -1,0 +1,49 @@
+{
+  "version" : "1.2",
+  "profiles" : [ {
+    "id" : "5cec0460-9d8b-423c-859d-711926c05ae1",
+    "name" : "Symfony (PHP, TWIG)",
+    "keyNamingPattern" : "SNAKE_CASE_PATTERN",
+    "sink" : {
+      "id" : "7772db4c-7b75-4988-a41f-eb61ac98f363",
+      "type" : "namespaced",
+      "translationsDirectory" : "$PROJECT_DIR$/Task2/vendor/nesbot/carbon/src/Carbon/Lang",
+      "fileType" : "php",
+      "defaultLocale" : "en",
+      "namespaces" : [ "messages" ],
+      "outputFilenameTemplate" : "%locale%.php",
+      "nestingType" : "DOT",
+      "placeholderFormatterName" : "SYMFONY_REPLACEMENT"
+    },
+    "sources" : [ {
+      "id" : "f6b090fb-c7e6-4941-86f5-234bb4a90266",
+      "type" : "php",
+      "scopeName" : "i18n Ally: Symfony/PHP source",
+      "scopePattern" : "file[proton]:Task1/src//*&&!file[proton]:Task1/src/DataFixtures//*",
+      "defaultReplacementTemplate" : "$this->translator->trans('%key%', %map%, '%namespace%')",
+      "recognizedReplacementTemplates" : [ ],
+      "skipDefaultNamespace" : true,
+      "sprintfMode" : false
+    }, {
+      "id" : "c2a33f48-c664-4315-8837-c6f438efd00b",
+      "type" : "twig",
+      "scopeName" : "i18n Ally: Symfony/Twig templates",
+      "scopePattern" : "file[proton]:Task1/templates//*",
+      "defaultReplacementTemplate" : "trans(%map%, '%namespace%')",
+      "attributeReplacementTemplate" : "",
+      "inlineTagsReplacementTemplate" : "trans(%map%, '%namespace%')|raw",
+      "recognizedReplacementTemplates" : [ ],
+      "inlineTagNames" : [ "a", "abbr", "acronym", "b", "bdi", "bdo", "big", "br", "cite", "code", "data", "del", "dfn", "em", "i", "img", "input", "ins", "kbd", "label", "mark", "meter", "output", "progress", "q", "ruby", "s", "samp", "slot", "small", "span", "strong", "sub", "sup", "time", "u", "tt", "var", "wbr" ],
+      "translatableAttributeNames" : [ "title", "alt", "placeholder", "label", "aria-label" ],
+      "skipDefaultNamespace" : true
+    } ]
+  } ],
+  "ignores" : {
+    "valuesInProject" : [ "use strict" ],
+    "valuesInFile" : { },
+    "filesInProject" : [ ],
+    "unignoredFunctionNames" : [ ],
+    "unignoredFunctionArguments" : { },
+    "ignoredArrayKeys" : [ "class", "selector", "template", "middleware", "layout", "el", "component", "type", "name", "id", "key", "sql", "query", "dateFormat", "date", "condition" ]
+  }
+}

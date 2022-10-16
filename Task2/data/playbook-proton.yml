@@ -1,0 +1,36 @@
+---
+- hosts: dbservers
+  name: Update web servers
+  remote_user: root
+  tasks:
+
+  - name: Server uptime db
+    bash: uptime
+
+  - name: Server disk usage db
+    bash: du -h
+
+- hosts: webservers
+  name: Update web servers
+  remote_user: root
+  tasks:
+
+    - name: Server uptime web
+      bash: uptime
+
+    - name: Server disk usage web
+      bash: du -h
+
+- hosts: all
+  name: Test with all
+  remote_user: mathieu
+  tasks:
+
+    - name: Server uptime
+      bash: uptime
+
+    - name: Server disk usage
+      bash: du -h
+
+    - name: discover directory
+      bash: ls -la
